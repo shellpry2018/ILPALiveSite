@@ -38,9 +38,18 @@ foreach($variable_names as $key => $field_info) {
 			<p style="margin-top:5px">' . date('g:i a', strtotime(get_field($key, $post_id))) . '</p>
 		</div>';
 	}
+	elseif($key == 'pet_deceased') {
+		$value = ucwords(get_field($key, $post_id));
+		$key = ucwords(str_replace('_', ' ', $key));
+		$key = str_replace('Deceased', 'Memorial Requested', $key);
+		$field_display .= 
+		 '<div class="field" style="margin-bottom:20px">
+			<h3 style="margin-bottom:0px">' . $key . '</h3>
+			<p style="margin-top:5px">' . $value . '</p>
+		</div>';
+	}
 	elseif($key == 'update_type') {
 		$update_type = ucwords(str_replace('_', ' ', get_field($key, $post_id)));
-		$update_type = str_replace('Deceased', 'Memorial', $update_type);
 		$field_display .= 
 		 '<div class="field" style="margin-bottom:20px">
 			<h3 style="margin-bottom:0px">' . ucwords(str_replace('_', ' ', $key)) . '</h3>

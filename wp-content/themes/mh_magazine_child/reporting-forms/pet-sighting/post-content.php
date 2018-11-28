@@ -37,5 +37,5 @@ $post_content .=
 		<img class="size-full" src="' . get_theme_mod('sponsor_banner') . '" alt="sponsor-banner">
 	</div>';
 
-$post_content .= '<iframe style="border: 0;" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCsda7YQmFkhuhyoIsqv6klKSTLXXkZJBs&amp;q=' . $zip_code . '&amp;zoom=11" width="425" height="350" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
+$post_content .= '<iframe style="border: 0;" src="https://www.google.com/maps/embed/v1/place?key=' . get_google_api_key() . '&amp;q=' . $zip_code . '&amp;zoom=11" width="425" height="350" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>';
 ?>

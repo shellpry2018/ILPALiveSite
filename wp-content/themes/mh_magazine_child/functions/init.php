@@ -27,6 +27,10 @@
 	}
 	add_action('init', 'update_my_custom_type', 99);
 
+	function get_google_api_key() {
+		return 'AIzaSyCsda7YQmFkhuhyoIsqv6klKSTLXXkZJBs';
+	}
+
 	function display_result($item) {
 		echo '<pre>';
 		print_r($item);

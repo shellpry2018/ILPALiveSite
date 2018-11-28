@@ -20,6 +20,7 @@
 	$email->setFrom('indylostpetalertstaff@indylostpetalert.com', $from_name);
 	$email->addAddress($to, $first_name . ' ' . $last_name);
 	$email->addReplyTo($reply_to);
+	// $email->addBCC('kakitzmiller@gmail.com', 'Kyle Kitzmiller');
 
 	$email->isHTML(true);
 	$email->Subject = $subject;

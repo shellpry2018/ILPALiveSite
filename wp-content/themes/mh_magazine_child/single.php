@@ -18,6 +18,6 @@
 	</div>
     <?php mh_second_sb(); ?>
 </div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_google_api_key() ?>"></script>
 <script src="/wp-content/themes/mh_magazine_child/zipcodes.js"></script>
 <?php get_footer(); ?>

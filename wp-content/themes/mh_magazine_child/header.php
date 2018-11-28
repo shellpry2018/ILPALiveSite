@@ -13,6 +13,18 @@
 <link rel="stylesheet" type="text/css" media="print" href="<?php echo home_url() ?>/wp-content/themes/mh_magazine_child/print.css" />
 </head>
 <body <?php body_class() ?>>
+<script>
+jQuery(function($){
+	$('img').each(function(){
+		var imgsrc = $(this).attr('src');
+		console.log(imgsrc);
+		imgsrc += (imgsrc.indexOf('?') > -1 ? '&' : '?');
+		imgsrc += 'randomstring=' + Math.random() * 99999999;
+		console.log(imgsrc);
+		$(this).attr('src', imgsrc);
+	});
+});
+</script>
 <?php if (is_active_sidebar('header')) { ?>
 <aside class="header-widget">
 	<?php dynamic_sidebar('header'); ?>

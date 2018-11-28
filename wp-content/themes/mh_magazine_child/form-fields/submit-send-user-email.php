@@ -25,6 +25,7 @@
 	$email->setFrom('indylostpetalertstaff@indylostpetalert.com', $from_name);
 	$email->addAddress($to, $first_name . ' ' . $last_name);
 	$email->addReplyTo('ilpavolunteer@gmail.com', 'Indy Lost Pet Alert');
+	// $email->addBCC('kakitzmiller@gmail.com', 'Kyle Kitzmiller');
 
 	$email->isHTML(true);
 	$email->Subject = $subject;

@@ -47,7 +47,7 @@ switch ($update_type) {
 	case 'pet_deceased':
 		$post_content .= 
 			'<div class="section-header">May we post a memorial for your pet?:</div>
-			<div class="color-value">' . $can_we_post_memorial . '</div>';
+			<div class="color-value">' . ucwords($pet_deceased) . '</div>';
 		break;
 
 	default:

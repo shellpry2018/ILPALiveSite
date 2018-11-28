@@ -1,25 +1,13 @@
 jQuery(function($) {
-	var $zipCode = $('#zipcode').html();
-
-	$.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + $zipCode, function(data) {
-		// console.log(data.results[0].geometry.location);
-		var $googleAddress =  {
-			lat: data.results[0].geometry.location.lat,
-			lng: data.results[0].geometry.location.lng
-		};
-		console.log($googleAddress);
-		function initMap() {
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 4,
-				center: $googleAddress
-			});
-			var marker = new google.maps.Marker({
-				position: $googleAddress,
-				map: map
-			});
-		}
-	});
-
+	function getGoogleLatLng() {
+		var $zipCode = $('#zipcode').html();
+		$.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + $zipCode, function(data) {
+			return {
+				lat: data.results[0].geometry.location.lat,
+				lng: data.results[0].geometry.location.lng
+			};
+		});
+	}
 
 	// $('.gform_button[type="submit"]').before(
 	// 	'<a id="submit-placeholder">Submit</a>'
